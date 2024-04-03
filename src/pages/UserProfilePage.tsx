@@ -1,8 +1,7 @@
-import UserProfileForm from '@c'
 
 const UserProfilePage = () => {
     return (
-        <UserProfileForm />
+        <>1</>
     )
 }
 

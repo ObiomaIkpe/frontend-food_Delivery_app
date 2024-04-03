@@ -54,7 +54,7 @@ export const useUpdateMyUser = () => {
     
     const {getAccessTokenSilently} = useAuth0();
 
-    const useUpdateMyUserRequest = async (formData: useUpdateMyUserRequest) {
+    const useUpdateMyUserRequest = async (formData: useUpdateMyUserRequest) => {
         const accessToken = await getAccessTokenSilently();
         const response = await fetch(`${API_BASE_URL}/api/my/user`, {
             method: "PUT",
@@ -72,5 +72,5 @@ export const useUpdateMyUser = () => {
         return response.json()
     }
 
-    const {mutateAsync: updateUser, isLoading, isSuccess, error, reset} = useMutation(useUpdateMyUser)
+    
 }
