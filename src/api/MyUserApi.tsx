@@ -15,7 +15,7 @@ export const useCreateMyUser = () => {
     
     const createMyUserRequest = async (user: CreateUserRequest)  => {
         const accessToken = await getAccessTokenSilently();
-        const response = await fetch(`${API_BASE_URL}/api/my/user`, {
+        const response = await fetch(`${API_BASE_URL}/api/my/users`, {
             method: "POST",
             headers: {
                 Authorization: `Bearer ${accessToken}`,
@@ -45,7 +45,7 @@ export const useCreateMyUser = () => {
 
 type useUpdateMyUserRequest = {
     name: string;
-    adressLine1: string;
+    addressLine1: string;
     city: string;
     country: string
 }
