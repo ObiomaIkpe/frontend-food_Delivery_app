@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 const formSchema = z.object({
     email:z.string().optional(),
     name: z.string().min(1, "name is required!"),
-    adressLine1: z.string().min(1, "AddressLine1  is required!"),
+    addressLine1: z.string().min(1, "AddressLine1  is required!"),
     city: z.string().min(1, "city is required"),
     country: z.string().min(1, "Country is required!"),
 });
@@ -21,7 +21,7 @@ type Props = {
     isLoading: boolean;
 }
 
-const userProfileData = ({onSave,isLoading}: Props) => {
+const userProfileForm = ({onSave,isLoading}: Props) => {
     const form = useForm<UserFormData>({
         resolver: zodResolver(formSchema)
     });
@@ -67,7 +67,7 @@ const userProfileData = ({onSave,isLoading}: Props) => {
                 )} />
 
 
-<FormField control={form.control} name="adressLine1" render={({field}) => (
+<FormField control={form.control} name="addressLine1" render={({field}) => (
                     <FormItem className="flex-1">
                         <FormLabel>Address Line 1</FormLabel>
                         <FormControl>
@@ -101,4 +101,4 @@ const userProfileData = ({onSave,isLoading}: Props) => {
     )
 }
 
-export default userProfileData;
+export default userProfileForm;
